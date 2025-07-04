@@ -1,0 +1,67 @@
+{
+  "name": "Ndzalama AI - Next-Gen Content Creation",
+  "short_name": "Ndzalama AI",
+  "description": "Advanced AI-powered image and video generation platform with cutting-edge features",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00d4ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBkNGZmO3N0b3Atb3BhY2l0eToxIiAvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmMDA2ZTtzdG9wLW9wYWNpdHk6MSIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgZmlsbD0idXJsKCNncmFkKSIgcng9IjQwIi8+PHBhdGggZD0iTTk2IDUwQzEyMC45MDEgNTAgMTQwIDY5LjA5OSAxNDAgOTRDMTQwIDExOC45MDEgMTIwLjkwMSAxMzggOTYgMTM4QzcxLjA5OSAxMzggNTIgMTE4LjkwMSA1MiA5NEM1MiA2OS4wOTkgNzEuMDk5IDUwIDk2IDUwWiIgZmlsbD0iIzBhMGEwYSIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iODAiIHI9IjQiIGZpbGw9IiMwMGQ0ZmYiLz48Y2lyY2xlIGN4PSIxMTIiIGN5PSI4MCIgcj0iNCIgZmlsbD0iIzAwZDRmZiIvPjxjaXJjbGUgY3g9Ijk2IiBjeT0iMTA4IiByPSI0IiBmaWxsPSIjMDBkNGZmIi8+PGxpbmUgeDE9Ijg0IiB5MT0iODQiIHgyPSIxMDgiIHkyPSI4NCIgc3Ryb2tlPSIjMDBkNGZmIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iOTIiIHkxPSI5MiIgeDI9IjEwMCIgeTI9IjEwMCIgc3Ryb2tlPSIjMDBkNGZmIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBkNGZmO3N0b3Atb3BhY2l0eToxIiAvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmMDA2ZTtzdG9wLW9wYWNpdHk6MSIgLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgZmlsbD0idXJsKCNncmFkKSIgcng9IjEwMCIvPjxwYXRoIGQ9Ik0yNTYgMTM0QzMzNC4zNzQgMTM0IDM3OCAxODUuNjI2IDM3OCAyNTZDMzc4IDMyNi4zNzQgMzI2LjM3NCAzNzggMjU2IDM3OEMxODUuNjI2IDM3OCAxMzQgMzI2LjM3NCAxMzQgMjU2QzEzNCAxODUuNjI2IDE4NS42MjYgMTM0IDI1NiAxMzRaIiBmaWxsPSIjMGEwYTBhIi8+PGNpcmNsZSBjeD0iMjE0IiBjeT0iMjE0IiByPSIxMCIgZmlsbD0iIzAwZDRmZiIvPjxjaXJjbGUgY3g9IjI5OCIgY3k9IjIxNCIgcj0iMTAiIGZpbGw9IiMwMGQ0ZmYiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyODgiIHI9IjEwIiBmaWxsPSIjMDBkNGZmIi8+PGxpbmUgeDE9IjIyNCIgeTE9IjIyNCIgeDI9IjI4OCIgeTI9IjIyNCIgc3Ryb2tlPSIjMDBkNGZmIiBzdHJva2Utd2lkdGg9IjYiLz48bGluZSB4MT0iMjQ2IiB5MT0iMjQ2IiB4Mj0iMjY2IiB5Mj0iMjY2IiBzdHJva2U9IiMwMGQ0ZmYiIHN0cm9rZS13aWR0aD0iNiIvPjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "graphics", "multimedia"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGZpbGw9IiMwYTBhMGEiLz48dGV4dCB4PSI2NDAiIHk9IjM2MCIgZmlsbD0iIzAwZDRmZiIgZm9udC1zaXplPSI0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIj5OZHphbGFtYSBBSSBTdHVkaW88L3RleHQ+PC9zdmc+",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  "features": [
+    "AI Image Generation",
+    "AI Video Creation",
+    "Modern UI",
+    "Mobile Responsive",
+    "Dark/Light Theme",
+    "Offline Support"
+  ],
+  "shortcuts": [
+    {
+      "name": "Image Studio",
+      "short_name": "Images",
+      "description": "Create AI-generated images",
+      "url": "/#image-studio",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIGZpbGw9IiMwMGQ0ZmYiIHJ4PSIyMCIvPjxwYXRoIGQ9Ik0yNCAyNEg3MlY3Mkg0OEwyNCA0OFYyNFoiIGZpbGw9IiMwYTBhMGEiLz48L3N2Zz4=",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Video Studio",
+      "short_name": "Videos",
+      "description": "Create AI-generated videos",
+      "url": "/#video-studio",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIGZpbGw9IiNmZjAwNmUiIHJ4PSIyMCIvPjxwYXRoIGQ9Ik0zNiAzMkw2NCA0OEwzNiA2NFYzMloiIGZpbGw9IiMwYTBhMGEiLz48L3N2Zz4=",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

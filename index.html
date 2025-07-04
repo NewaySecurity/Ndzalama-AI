@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndzalama AI - AI Image Generation Studio</title>
+    <meta name="description" content="Advanced AI-powered image generation platform with cutting-edge features">
+    <meta name="keywords" content="AI, artificial intelligence, image generation, digital art, machine learning">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="ai-logo">
+                <div class="neural-network">
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="connection"></div>
+                    <div class="connection"></div>
+                </div>
+            </div>
+            <h2>Ndzalama AI</h2>
+            <p>Initializing Neural Networks...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <canvas id="neural-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Ndzalama AI</h1>
+                    <span class="version">v2.0</span>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#image-studio" class="nav-link">
+                    <i class="fas fa-image"></i>
+                    <span>Image Studio</span>
+                </a>
+                <a href="#gallery" class="nav-link">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Gallery</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+            </div>
+            
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-particles"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">Next-Gen AI</span>
+                    <div class="badge-glow"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Unleash Your</span>
+                    <span class="glitch" data-text="Creativity">Creativity</span>
+                </h1>
+                <p class="hero-description">
+                    Harness the power of advanced AI models to create breathtaking images.
+                    Professional-quality image generation at your fingertips.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="75000">0</span>
+                        <span class="stat-label">Images Generated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="8500">0</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-label">AI Models</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary glow-effect" onclick="scrollToSection('image-studio')">
+                        <i class="fas fa-image"></i>
+                        <span>Start Creating</span>
+                        <div class="btn-particles"></div>
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('gallery')">
+                        <i class="fas fa-folder-open"></i>
+                        <span>View Gallery</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-brain">
+                    <div class="brain-core"></div>
+                    <div class="neural-paths"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Tools Bar -->
+        <div class="quick-tools">
+            <div class="tool-item" onclick="openQuickPrompt('image')">
+                <i class="fas fa-magic"></i>
+                <span>Quick Generate</span>
+            </div>
+            <div class="tool-item" onclick="scrollToSection('image-studio')">
+                <i class="fas fa-cog"></i>
+                <span>Advanced Studio</span>
+            </div>
+            <div class="tool-item" onclick="openGallery()">
+                <i class="fas fa-history"></i>
+                <span>Recent</span>
+            </div>
+        </div>
+
+        <!-- Image Studio -->
+        <section id="image-studio" class="studio-section">
+            <div class="container">
+                <div class="studio-header">
+                    <h2><i class="fas fa-image"></i> Image Studio</h2>
+                    <p>Create stunning AI-generated images with advanced controls</p>
+                </div>
+                
+                <div class="studio-workspace">
+                    <div class="workspace-left">
+                        <!-- Prompt Section -->
+                        <div class="prompt-section">
+                            <div class="section-header">
+                                <h3>Creative Prompt</h3>
+                                <div class="prompt-tools">
+                                    <button class="tool-btn" onclick="enhancePrompt()" title="AI Enhance">
+                                        <i class="fas fa-magic"></i>
+                                    </button>
+                                    <button class="tool-btn" onclick="randomPrompt()" title="Random Prompt">
+                                        <i class="fas fa-dice"></i>
+                                    </button>
+                                    <button class="tool-btn" onclick="clearPrompt()" title="Clear">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="prompt-container">
+                                <textarea id="image-prompt" placeholder="Describe your vision..." spellcheck="false"></textarea>
+                                <div class="prompt-suggestions" id="prompt-suggestions"></div>
+                                <div class="prompt-counter">
+                                    <span id="char-count">0</span>/500 characters
+                                </div>
+                            </div>
+                            
+                            <!-- Negative Prompts -->
+                            <div class="negative-prompt-section">
+                                <div class="section-header">
+                                    <h4>Negative Prompts</h4>
+                                    <button class="toggle-negative" onclick="toggleNegativePrompts()">
+                                        <i class="fas fa-minus-circle"></i> What to Avoid
+                                    </button>
+                                </div>
+                                <div class="negative-prompt-container" id="negative-prompt-container" style="display: none;">
+                                    <textarea id="negative-prompt" placeholder="Things to avoid in the image (e.g., blurry, low quality, distorted)..." spellcheck="false"></textarea>
+                                    <div class="negative-suggestions">
+                                        <button class="suggestion-tag" onclick="addNegativeTag('blurry, low quality')">Low Quality</button>
+                                        <button class="suggestion-tag" onclick="addNegativeTag('distorted, deformed')">Distorted</button>
+                                        <button class="suggestion-tag" onclick="addNegativeTag('extra limbs, bad anatomy')">Bad Anatomy</button>
+                                        <button class="suggestion-tag" onclick="addNegativeTag('text, watermark')">Text/Watermark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Controls -->
+                        <div class="controls-section">
+                            <div class="section-header">
+                                <h3>Generation Settings</h3>
+                                <button class="toggle-advanced" onclick="toggleAdvanced()">
+                                    <i class="fas fa-cog"></i> Advanced
+                                </button>
+                            </div>
+                            
+                            <div class="controls-grid">
+                                <div class="control-group">
+                                    <label>AI Model</label>
+                                    <div class="model-selector">
+                                        <button class="model-btn active" data-model="flux">
+                                            <div class="model-info">
+                                                <span class="model-name">FLUX.1</span>
+                                                <span class="model-desc">Latest & Best Quality</span>
+                                            </div>
+                                        </button>
+                                        <button class="model-btn" data-model="sdxl">
+                                            <div class="model-info">
+                                                <span class="model-name">SDXL</span>
+                                                <span class="model-desc">Stable Diffusion XL</span>
+                                            </div>
+                                        </button>
+                                        <button class="model-btn" data-model="dreamshaper">
+                                            <div class="model-info">
+                                                <span class="model-name">DreamShaper</span>
+                                                <span class="model-desc">Artistic & Creative</span>
+                                            </div>
+                                        </button>
+                                        <button class="model-btn" data-model="realistic">
+                                            <div class="model-info">
+                                                <span class="model-name">Realistic Vision</span>
+                                                <span class="model-desc">Photorealistic Images</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Style</label>
+                                    <div class="style-selector">
+                                        <div class="style-option active" data-style="realistic">
+                                            <div class="style-preview"></div>
+                                            <span>Realistic</span>
+                                        </div>
+                                        <div class="style-option" data-style="artistic">
+                                            <div class="style-preview"></div>
+                                            <span>Artistic</span>
+                                        </div>
+                                        <div class="style-option" data-style="cyberpunk">
+                                            <div class="style-preview"></div>
+                                            <span>Cyberpunk</span>
+                                        </div>
+                                        <div class="style-option" data-style="anime">
+                                            <div class="style-preview"></div>
+                                            <span>Anime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Aspect Ratio</label>
+                                    <div class="aspect-ratio-selector">
+                                        <button class="aspect-btn active" data-size="1024x1024" data-aspect="1:1">
+                                            <span class="aspect-icon">□</span>
+                                            <span>Square</span>
+                                        </button>
+                                        <button class="aspect-btn" data-size="1344x768" data-aspect="16:9">
+                                            <span class="aspect-icon">▬</span>
+                                            <span>Landscape</span>
+                                        </button>
+                                        <button class="aspect-btn" data-size="768x1344" data-aspect="9:16">
+                                            <span class="aspect-icon">▌</span>
+                                            <span>Portrait</span>
+                                        </button>
+                                        <button class="aspect-btn" data-size="1536x640" data-aspect="21:9">
+                                            <span class="aspect-icon">▭</span>
+                                            <span>Cinematic</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Batch Generation</label>
+                                    <div class="batch-controls">
+                                        <div class="batch-count">
+                                            <button class="batch-btn active" data-count="1">1</button>
+                                            <button class="batch-btn" data-count="2">2</button>
+                                            <button class="batch-btn" data-count="4">4</button>
+                                            <button class="batch-btn" data-count="8">8</button>
+                                        </div>
+                                        <label class="batch-toggle">
+                                            <input type="checkbox" id="variations-toggle">
+                                            <span class="toggle-slider"></span>
+                                            <span>Generate Variations</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group advanced-control" style="display: none;">
+                                    <label>Quality <span class="quality-value">7.5</span></label>
+                                    <input type="range" id="quality-slider" min="1" max="20" value="7.5" step="0.1">
+                                </div>
+                                
+                                <div class="control-group advanced-control" style="display: none;">
+                                    <label>Steps <span class="steps-value">20</span></label>
+                                    <input type="range" id="steps-slider" min="10" max="50" value="20">
+                                </div>
+                                
+                                <!-- ControlNet Section -->
+                                <div class="control-group advanced-control" style="display: none;">
+                                    <label>ControlNet</label>
+                                    <div class="controlnet-section">
+                                        <label class="controlnet-toggle">
+                                            <input type="checkbox" id="controlnet-enabled">
+                                            <span class="toggle-slider"></span>
+                                            <span>Enable ControlNet</span>
+                                        </label>
+                                        <div class="controlnet-options" id="controlnet-options" style="display: none;">
+                                            <select id="controlnet-type" class="controlnet-select">
+                                                <option value="canny">Canny Edge</option>
+                                                <option value="pose">Pose Detection</option>
+                                                <option value="depth">Depth Map</option>
+                                                <option value="normal">Normal Map</option>
+                                                <option value="scribble">Scribble</option>
+                                            </select>
+                                            <div class="image-upload">
+                                                <input type="file" id="controlnet-image" accept="image/*" style="display: none;">
+                                                <button class="upload-btn" onclick="document.getElementById('controlnet-image').click()">
+                                                    <i class="fas fa-upload"></i> Upload Reference
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Image-to-Image Section -->
+                                <div class="control-group advanced-control" style="display: none;">
+                                    <label>Image-to-Image</label>
+                                    <div class="img2img-section">
+                                        <label class="img2img-toggle">
+                                            <input type="checkbox" id="img2img-enabled">
+                                            <span class="toggle-slider"></span>
+                                            <span>Use Source Image</span>
+                                        </label>
+                                        <div class="img2img-options" id="img2img-options" style="display: none;">
+                                            <div class="image-upload">
+                                                <input type="file" id="source-image" accept="image/*" style="display: none;">
+                                                <button class="upload-btn" onclick="document.getElementById('source-image').click()">
+                                                    <i class="fas fa-image"></i> Upload Source Image
+                                                </button>
+                                            </div>
+                                            <div class="strength-control">
+                                                <label>Transformation Strength <span class="strength-value">0.75</span></label>
+                                                <input type="range" id="img2img-strength" min="0.1" max="1" value="0.75" step="0.05">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Generation Button -->
+                        <div class="generate-section">
+                            <button class="btn-generate-modern" id="generate-image-btn" onclick="generateImageModern()">
+                                <div class="btn-content">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Generate Image</span>
+                                </div>
+                                <div class="btn-progress" id="image-progress"></div>
+                            </button>
+                            <div class="generation-info">
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>~30 seconds</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-coins"></i>
+                                    <span>Free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workspace-right">
+                        <!-- Preview Area -->
+                        <div class="preview-section">
+                            <div class="preview-header">
+                                <h3>Preview</h3>
+                                <div class="preview-tools">
+                                    <button class="tool-btn" onclick="downloadImage()" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="tool-btn" onclick="shareImage()" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                    <button class="tool-btn" onclick="saveToGallery()" title="Save to Gallery">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="preview-container" id="image-preview">
+                                <div class="preview-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Your AI creation will appear here</p>
+                                </div>
+                            </div>
+                            <div class="generation-status" id="image-status"></div>
+                        </div>
+                        
+                        <!-- Recent Generations -->
+                        <div class="recent-section">
+                            <h4>Recent Generations</h4>
+                            <div class="recent-grid" id="recent-images"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Image Tools Section -->
+        <section id="advanced-tools" class="studio-section">
+            <div class="container">
+                <div class="studio-header">
+                    <h2><i class="fas fa-tools"></i> Advanced Image Tools</h2>
+                    <p>Professional image enhancement and editing capabilities</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>AI Upscaling</h3>
+                        <p>Enhance image resolution with AI-powered upscaling</p>
+                        <button class="btn-secondary" onclick="openUpscalingTool()">Launch Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Style Transfer</h3>
+                        <p>Apply artistic styles to your generated images</p>
+                        <button class="btn-secondary" onclick="openStyleTransfer()">Launch Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-crop"></i>
+                        </div>
+                        <h3>Smart Cropping</h3>
+                        <p>AI-powered intelligent image cropping and composition</p>
+                        <button class="btn-secondary" onclick="openSmartCrop()">Launch Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-adjust"></i>
+                        </div>
+                        <h3>Color Enhancement</h3>
+                        <p>Automatic color correction and enhancement</p>
+                        <button class="btn-secondary" onclick="openColorEnhance()">Launch Tool</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="gallery-header">
+                    <h2><i class="fas fa-folder-open"></i> Your Gallery</h2>
+                    <div class="gallery-filters">
+                        <button class="filter-btn active" data-filter="all">All Images</button>
+                        <button class="filter-btn" data-filter="recent">Recent</button>
+                        <button class="filter-btn" data-filter="favorites">Favorites</button>
+                        <button class="filter-btn" data-filter="styles">By Style</button>
+                    </div>
+                </div>
+                
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+                
+                <div class="gallery-empty" id="gallery-empty">
+                    <i class="fas fa-images"></i>
+                    <h3>No images yet</h3>
+                    <p>Start creating amazing images with our AI image generator!</p>
+                    <button class="btn-primary" onclick="scrollToSection('image-studio')">
+                        Create Your First Image
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h3>About Ndzalama AI</h3>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Ndzalama AI is a cutting-edge web application that harnesses the power of free and open-source AI models to generate stunning images. Built with passion by Brilliant Mashele at BubbleRoot Studios, this platform makes AI-powered image creation accessible to everyone.</p>
+                        <p>Our mission is to democratize AI creativity, providing users with professional-quality image generation tools without the barriers of cost or complexity.</p>
+                    </div>
+                    <div class="credits">
+                        <h4>Created by:</h4>
+                        <p><strong>Brilliant Mashele</strong></p>
+                        <p>BubbleRoot Studios</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fullscreen Viewer Modal -->
+    <div id="fullscreen-modal" class="fullscreen-modal">
+        <div class="fullscreen-content">
+            <button class="close-fullscreen" onclick="closeFullscreen()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="fullscreen-controls">
+                <button class="fullscreen-btn" onclick="zoomIn()" title="Zoom In">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="fullscreen-btn" onclick="zoomOut()" title="Zoom Out">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="fullscreen-btn" onclick="resetZoom()" title="Reset Zoom">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </button>
+                <button class="fullscreen-btn" onclick="downloadFullscreenImage()" title="Download">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="fullscreen-btn" onclick="shareFullscreenImage()" title="Share">
+                    <i class="fas fa-share"></i>
+                </button>
+                <button class="fullscreen-btn" onclick="toggleFavorite()" title="Toggle Favorite">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+            <div class="fullscreen-image-container">
+                <img id="fullscreen-image" alt="Fullscreen Image" draggable="false">
+            </div>
+            <div class="fullscreen-info">
+                <div class="image-metadata">
+                    <span class="image-prompt"></span>
+                    <span class="image-details"></span>
+                </div>
+                <div class="navigation-arrows">
+                    <button class="nav-arrow prev" onclick="navigateGallery(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-arrow next" onclick="navigateGallery(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Controls Modal -->
+    <div id="gallery-controls" class="gallery-controls-modal">
+        <div class="controls-content">
+            <button class="close-controls" onclick="closeGalleryControls()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Gallery Management</h3>
+            <div class="controls-grid">
+                <button class="control-btn" onclick="clearGallery()">
+                    <i class="fas fa-trash"></i>
+                    <span>Clear All</span>
+                </button>
+                <button class="control-btn" onclick="exportGallery()">
+                    <i class="fas fa-file-export"></i>
+                    <span>Export Gallery</span>
+                </button>
+                <button class="control-btn" onclick="importGallery()">
+                    <i class="fas fa-file-import"></i>
+                    <span>Import Gallery</span>
+                </button>
+                <button class="control-btn" onclick="sortGallery('date')">
+                    <i class="fas fa-sort-amount-down"></i>
+                    <span>Sort by Date</span>
+                </button>
+                <button class="control-btn" onclick="sortGallery('name')">
+                    <i class="fas fa-sort-alpha-down"></i>
+                    <span>Sort by Name</span>
+                </button>
+                <button class="control-btn" onclick="downloadAll()">
+                    <i class="fas fa-download"></i>
+                    <span>Download All</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ndzalama AI - BubbleRoot Studios. All rights reserved.</p>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Made with ❤️ in Bushbuckridge, South Africa</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
