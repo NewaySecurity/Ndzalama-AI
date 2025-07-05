@@ -5690,3 +5690,401 @@ async function compositeVideoAdvanced(scenes, totalDuration, quality) {
         }, 'image/jpeg', 0.95);
     });
 }
+
+// BubbleRoot Studios Monetization Functions
+
+// Show services promotion after image generation
+function showServicesPromotion() {
+    const promotion = document.getElementById('services-promotion');
+    if (promotion) {
+        promotion.style.display = 'block';
+        promotion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// Hide services promotion
+function hideServicesPromotion() {
+    const promotion = document.getElementById('services-promotion');
+    if (promotion) {
+        promotion.style.display = 'none';
+    }
+}
+
+// Open specific service page
+function openServicePage(serviceType) {
+    const serviceMap = {
+        'branding': '#services',
+        'web-dev': '#services',
+        'app-dev': '#services'
+    };
+    
+    const section = serviceMap[serviceType] || '#services';
+    scrollToSection(section.replace('#', ''));
+    
+    const serviceNames = {
+        'branding': 'Custom Branding Services',
+        'web-dev': 'Web Development Services',
+        'app-dev': 'App Development Services'
+    };
+    
+    showNotification(Explore our  below!, 'info');
+}
+
+// Show all BubbleRoot Studios services
+function showAllServices() {
+    scrollToSection('services');
+    showNotification('Explore all our professional services below!', 'success');
+}
+
+// Contact BubbleRoot Studios
+function contactBubbleRoot() {
+    const email = 'hello@bubblerootstudios.com';
+    const subject = 'Inquiry from Ndzalama AI User';
+    const body = 'Hi BubbleRoot Studios team,\n\nI am interested in your services after using Ndzalama AI. Please contact me to discuss my project.\n\nBest regards';
+    
+    const mailtoLink = mailto:?subject=&body=;
+    window.open(mailtoLink, '_blank');
+    
+    showNotification('Opening email client to contact BubbleRoot Studios!', 'success');
+}
+
+// Request quote
+function requestQuote() {
+    const email = 'quotes@bubblerootstudios.com';
+    const subject = 'Quote Request from Ndzalama AI User';
+    const body = 'Hi BubbleRoot Studios,\n\nI would like to request a quote for:\n\n[ ] Web Development\n[ ] Graphic Design\n[ ] Voice Acting\n[ ] 3D Modeling\n[ ] Other: ____________\n\nProject Description:\n\n\nContact Information:\nName: \nPhone: \nEmail: \n\nThank you!';
+    
+    const mailtoLink = mailto:?subject=&body=;
+    window.open(mailtoLink, '_blank');
+    
+    showNotification('Opening quote request form!', 'success');
+}
+
+// Contact specific service
+function contactService(serviceType) {
+    const serviceMap = {
+        'web-bundle': 'Complete Web Presence Bundle',
+        'branding-bundle': 'Business Branding Package',
+        'app-bundle': 'App Development Suite'
+    };
+    
+    const serviceName = serviceMap[serviceType] || 'Professional Services';
+    const email = 'hello@bubblerootstudios.com';
+    const subject = Interest in ;
+    const body = Hi BubbleRoot Studios,\n\nI am interested in your  after using Ndzalama AI.\n\nPlease contact me to discuss details and pricing.\n\nBest regards;
+    
+    const mailtoLink = mailto:?subject=&body=;
+    window.open(mailtoLink, '_blank');
+    
+    showNotification(Contacting BubbleRoot Studios about !, 'success');
+}
+
+// Show service details
+function showServiceDetails(serviceType) {
+    const serviceDetails = {
+        'web-dev': 'Custom websites, e-commerce platforms, and web applications built with modern technologies.',
+        'graphic-design': 'Professional logos, branding, marketing materials, and visual identity design.',
+        'voice-acting': 'Professional voiceovers for commercials, videos, narrations, and audio content.',
+        '3d-modeling': 'Professional 3D modeling and animation using Blender and advanced rendering tools.',
+        'print-services': 'Business cards, flyers, banners, and professional print materials.',
+        'social-video': 'Engaging social media videos and content management services.',
+        'admin-services': 'Scheduling, data entry, and tailored business operations support.',
+        'business-plans': 'Comprehensive business profiles and detailed business planning.',
+        'funeral-programs': 'Sensitive and respectful funeral program design services.',
+        'vehicle-branding': 'Custom vehicle wraps and branding for maximum business visibility.'
+    };
+    
+    const description = serviceDetails[serviceType] || 'Professional service details';
+    showNotification(description, 'info');
+    scrollToSection('services');
+}
+
+// Premium feature purchase
+function purchaseFeature(featureType) {
+    const features = {
+        'upscaling': { name: 'AI Super Resolution', price: '', description: 'Upscale your images to 4K resolution' },
+        'color-grading': { name: 'Professional Color Grading', price: '', description: 'Apply cinematic color grading' },
+        'background-removal': { name: 'Smart Background Removal', price: '', description: 'Remove backgrounds with AI precision' },
+        'complete-suite': { name: 'Complete Enhancement Suite', price: '', description: 'All premium features combined' }
+    };
+    
+    const feature = features[featureType];
+    if (feature) {
+        const confirmed = confirm(Purchase  for ?\n\n\n\nNote: This is a demo. Contact BubbleRoot Studios for actual pricing.);
+        
+        if (confirmed) {
+            showNotification(${feature.name} - Contact BubbleRoot Studios for this premium service!, 'success');
+            contactBubbleRoot();
+        }
+    }
+}
+
+// Portfolio functions
+function viewCaseStudy(caseType) {
+    const cases = {
+        'ecommerce': 'E-commerce Platform Case Study',
+        'branding': 'Restaurant Brand Identity Case Study',
+        'mobile-app': 'Fitness Mobile App Case Study'
+    };
+    
+    showNotification(Viewing ..., 'info');
+}
+
+function viewFullPortfolio() {
+    showNotification('Contact BubbleRoot Studios to view our complete portfolio!', 'info');
+    contactBubbleRoot();
+}
+
+function startCustomProject() {
+    const email = 'projects@bubblerootstudios.com';
+    const subject = 'Custom Project Inquiry';
+    const body = 'Hi BubbleRoot Studios,\n\nI would like to start a custom project. Here are my requirements:\n\nProject Type: \nBudget Range: \nTimeline: \nDescription: \n\nPlease contact me to discuss further.\n\nBest regards';
+    
+    const mailtoLink = mailto:?subject=&body=;
+    window.open(mailtoLink, '_blank');
+    
+    showNotification('Starting custom project inquiry!', 'success');
+}
+
+// Seasonal promotion
+function claimOffer() {
+    const email = 'offers@bubblerootstudios.com';
+    const subject = 'Claiming Summer Special Offer';
+    const body = 'Hi BubbleRoot Studios,\n\nI would like to claim the 30% off summer special offer mentioned on Ndzalama AI.\n\nService interested in: \nProject details: \n\nPlease contact me with the discounted pricing.\n\nBest regards';
+    
+    const mailtoLink = mailto:?subject=&body=;
+    window.open(mailtoLink, '_blank');
+    
+    showNotification('Claiming special offer! Check your email client.', 'success');
+}
+
+// Initialize promotional countdown
+function initPromotionCountdown() {
+    const countdownElement = document.getElementById('promotion-countdown');
+    if (!countdownElement) return;
+    
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7);
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate.getTime() - now;
+        
+        if (distance < 0) {
+            countdownElement.innerHTML = 'Offer Expired';
+            return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        countdownElement.innerHTML = ${days}d h m s remaining;
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+// Enhanced image generation completion to show promotion
+const originalDisplayImageResult = window.displayImageResult;
+window.displayImageResult = function(imageUrl, prompt, model, container, statusDiv) {
+    if (originalDisplayImageResult) {
+        originalDisplayImageResult(imageUrl, prompt, model, container, statusDiv);
+    }
+    
+    // Show services promotion after successful generation
+    setTimeout(() => {
+        showServicesPromotion();
+    }, 2000);
+};
+
+// Initialize countdown on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initPromotionCountdown();
+});
+
+// Currency Converter Functionality
+let currentCurrency = 'ZAR';
+let exchangeRate = 1;
+
+// Currency rates (ZAR to other currencies)
+const currencyRates = {
+    'ZAR': 1,
+    'USD': 18.5,
+    'EUR': 20.2,
+    'GBP': 23.1,
+    'AUD': 12.8,
+    'CAD': 13.7
+};
+
+const currencySymbols = {
+    'ZAR': 'R',
+    'USD': '$',
+    'EUR': '€',
+    'GBP': '£',
+    'AUD': 'A$',
+    'CAD': 'C$'
+};
+
+// Toggle currency dropdown
+function toggleCurrency() {
+    const dropdown = document.getElementById('currency-dropdown');
+    const isVisible = dropdown.classList.contains('show');
+    
+    if (isVisible) {
+        dropdown.classList.remove('show');
+    } else {
+        dropdown.classList.add('show');
+    }
+}
+
+// Set currency and convert all prices
+function setCurrency(currency, rate) {
+    currentCurrency = currency;
+    exchangeRate = rate;
+    
+    // Update button text
+    document.getElementById('current-currency').textContent = currency;
+    
+    // Hide dropdown
+    document.getElementById('currency-dropdown').classList.remove('show');
+    
+    // Convert all prices on the page
+    convertAllPrices();
+    
+    // Show notification
+    showNotification(Currency changed to . All prices updated!, 'success');
+}
+
+// Convert all prices on the page
+function convertAllPrices() {
+    // Get all price elements
+    const priceElements = document.querySelectorAll('.price, .feature-price, .service-price');
+    
+    priceElements.forEach(element => {
+        let zarAmount;
+        
+        // Get ZAR amount from data attribute or parse from text
+        if (element.hasAttribute('data-zar')) {
+            zarAmount = parseInt(element.getAttribute('data-zar'));
+        } else {
+            // Extract number from text (fallback)
+            const match = element.textContent.match(/[\d,]+/);
+            if (match) {
+                zarAmount = parseInt(match[0].replace(/,/g, ''));
+            } else {
+                return; // Skip if no number found
+            }
+        }
+        
+        // Convert to selected currency
+        const convertedAmount = Math.round(zarAmount / exchangeRate);
+        const symbol = currencySymbols[currentCurrency];
+        
+        // Format the converted price
+        const formattedPrice = formatCurrency(convertedAmount, symbol);
+        
+        // Update the element
+        if (currentCurrency === 'ZAR') {
+            element.textContent = element.textContent.replace(/[R$€£A$][\d,]+/, formattedPrice);
+            element.classList.remove('price-converted');
+        } else {
+            element.textContent = element.textContent.replace(/[R$€£A$][\d,]+/, formattedPrice);
+            element.classList.add('price-converted');
+        }
+    });
+    
+    // Update premium feature prices specifically
+    updatePremiumPrices();
+}
+
+// Format currency with proper separators
+function formatCurrency(amount, symbol) {
+    if (amount >= 1000) {
+        return symbol + amount.toLocaleString();
+    }
+    return symbol + amount;
+}
+
+// Update premium feature prices (they have different structure)
+function updatePremiumPrices() {
+    const premiumPrices = [
+        { selector: '.premium-feature:nth-child(1) .feature-price', zarPrice: 100 },
+        { selector: '.premium-feature:nth-child(2) .feature-price', zarPrice: 60 },
+        { selector: '.premium-feature:nth-child(3) .feature-price', zarPrice: 40 },
+        { selector: '.premium-feature:nth-child(4) .feature-price', zarPrice: 160 }
+    ];
+    
+    premiumPrices.forEach(item => {
+        const element = document.querySelector(item.selector);
+        if (element) {
+            const convertedAmount = Math.round(item.zarPrice / exchangeRate);
+            const symbol = currencySymbols[currentCurrency];
+            const formattedPrice = formatCurrency(convertedAmount, symbol);
+            
+            if (element.textContent.includes('per image')) {
+                element.innerHTML = formattedPrice + ' per image';
+            } else if (element.textContent.includes('R200')) {
+                // Handle the original price in the bundle
+                const originalConverted = Math.round(200 / exchangeRate);
+                const originalFormatted = formatCurrency(originalConverted, symbol);
+                element.innerHTML = ${formattedPrice} <span class="original-price"></span>;
+            }
+        }
+    });
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const converter = document.querySelector('.currency-converter');
+    const dropdown = document.getElementById('currency-dropdown');
+    
+    if (converter && !converter.contains(event.target)) {
+        dropdown.classList.remove('show');
+    }
+});
+
+// Initialize currency converter on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Set initial currency to ZAR
+    setCurrency('ZAR', 1);
+    
+    // Add data-zar attributes to price elements that don't have them
+    const priceElements = document.querySelectorAll('.price, .service-price');
+    priceElements.forEach(element => {
+        if (!element.hasAttribute('data-zar')) {
+            const match = element.textContent.match(/R([\d,]+)/);
+            if (match) {
+                const zarAmount = parseInt(match[1].replace(/,/g, ''));
+                element.setAttribute('data-zar', zarAmount);
+            }
+        }
+    });
+});
+
+// Update JavaScript functions to use current currency in notifications
+const originalPurchaseFeature = window.purchaseFeature;
+window.purchaseFeature = function(featureType) {
+    const features = {
+        'upscaling': { name: 'AI Super Resolution', zarPrice: 100, description: 'Upscale your images to 4K resolution' },
+        'color-grading': { name: 'Professional Color Grading', zarPrice: 60, description: 'Apply cinematic color grading' },
+        'background-removal': { name: 'Smart Background Removal', zarPrice: 40, description: 'Remove backgrounds with AI precision' },
+        'complete-suite': { name: 'Complete Enhancement Suite', zarPrice: 160, description: 'All premium features combined' }
+    };
+    
+    const feature = features[featureType];
+    if (feature) {
+        const convertedPrice = Math.round(feature.zarPrice / exchangeRate);
+        const symbol = currencySymbols[currentCurrency];
+        const formattedPrice = formatCurrency(convertedPrice, symbol);
+        
+        const confirmed = confirm(Purchase  for ?\n\n\n\nNote: This is a demo. Contact BubbleRoot Studios for actual pricing.);
+        
+        if (confirmed) {
+            showNotification(${feature.name} - Contact BubbleRoot Studios for this premium service!, 'success');
+            contactBubbleRoot();
+        }
+    }
+};

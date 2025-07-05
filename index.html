@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ndzalama AI - AI Image Generation Studio</title>
-    <meta name="description" content="Advanced AI-powered image generation platform with cutting-edge features">
-    <meta name="keywords" content="AI, artificial intelligence, image generation, digital art, machine learning">
+    <title>BubbleRoot Studios - Professional Design & Tech Services | Featuring Ndzalama AI</title>
+    <meta name="description" content="BubbleRoot Studios offers comprehensive design, tech, and business services including web development, graphic design, AI solutions, voice acting, and more.">
+    <meta name="keywords" content="BubbleRoot Studios, web design, graphic design, AI services, voice acting, 3D modeling, business solutions, South Africa">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="advanced-tools.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -44,11 +44,11 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-brain"></i>
+                    <i class="fas fa-rocket"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>Ndzalama AI</h1>
-                    <span class="version">v2.0</span>
+                    <h1>BubbleRoot Studios</h1>
+                    <span class="version">Professional Services</span>
                 </div>
             </div>
             
@@ -64,18 +64,38 @@
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
+                <a href="#services" class="nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Services</span>
+                </a>
                 <a href="#image-studio" class="nav-link">
-                    <i class="fas fa-image"></i>
-                    <span>Image Studio</span>
+                    <i class="fas fa-brain"></i>
+                    <span>Ndzalama AI</span>
                 </a>
                 <a href="#gallery" class="nav-link">
                     <i class="fas fa-folder-open"></i>
-                    <span>Gallery</span>
+                    <span>Portfolio</span>
                 </a>
                 <a href="#about" class="nav-link">
                     <i class="fas fa-info-circle"></i>
                     <span>About</span>
                 </a>
+            </div>
+            
+            <!-- Currency Converter -->
+            <div class="currency-converter">
+                <button class="currency-btn" id="currency-btn" onclick="toggleCurrency()">
+                    <i class="fas fa-globe"></i>
+                    <span id="current-currency">ZAR</span>
+                </button>
+                <div class="currency-dropdown" id="currency-dropdown">
+                    <div class="currency-option" onclick="setCurrency('ZAR', 1)">🇿🇦 ZAR (South African Rand)</div>
+                    <div class="currency-option" onclick="setCurrency('USD', 18.5)">🇺🇸 USD (US Dollar)</div>
+                    <div class="currency-option" onclick="setCurrency('EUR', 20.2)">🇪🇺 EUR (Euro)</div>
+                    <div class="currency-option" onclick="setCurrency('GBP', 23.1)">🇬🇧 GBP (British Pound)</div>
+                    <div class="currency-option" onclick="setCurrency('AUD', 12.8)">🇦🇺 AUD (Australian Dollar)</div>
+                    <div class="currency-option" onclick="setCurrency('CAD', 13.7)">🇨🇦 CAD (Canadian Dollar)</div>
+                </div>
             </div>
             
             <!-- Theme Toggle -->
@@ -91,16 +111,16 @@
             <div class="hero-particles"></div>
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-text">Next-Gen AI</span>
+                    <span class="badge-text">Professional Services</span>
                     <div class="badge-glow"></div>
                 </div>
                 <h1 class="hero-title">
-                    <span class="gradient-text">Unleash Your</span>
-                    <span class="glitch" data-text="Creativity">Creativity</span>
+                    <span class="gradient-text">BubbleRoot</span>
+                    <span class="glitch" data-text="Studios">Studios</span>
                 </h1>
                 <p class="hero-description">
-                    Harness the power of advanced AI models to create breathtaking images.
-                    Professional-quality image generation at your fingertips.
+                    Comprehensive design, tech, and business solutions including web development, 
+                    graphic design, AI services, voice acting, and more. Featuring our free Ndzalama AI image generator.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -118,13 +138,13 @@
                 </div>
                 <div class="hero-buttons">
                     <button class="btn-primary glow-effect" onclick="scrollToSection('image-studio')">
-                        <i class="fas fa-image"></i>
-                        <span>Start Creating</span>
+                        <i class="fas fa-brain"></i>
+                        <span>Try Ndzalama AI Free</span>
                         <div class="btn-particles"></div>
                     </button>
-                    <button class="btn-secondary" onclick="scrollToSection('gallery')">
-                        <i class="fas fa-folder-open"></i>
-                        <span>View Gallery</span>
+                    <button class="btn-secondary" onclick="scrollToSection('services')">
+                        <i class="fas fa-briefcase"></i>
+                        <span>View All Services</span>
                     </button>
                 </div>
             </div>
@@ -408,6 +428,49 @@
                                         <i class="fas fa-heart"></i>
                                     </button>
                                 </div>
+
+                                <!-- Monetization: Paid Services Promotion after image creation -->
+                                <div class="services-promotion" id="services-promotion" style="display: none;">
+                                    <div class="promotion-header">
+                                        <h4><i class="fas fa-rocket"></i> Love your creation? Take it to the next level!</h4>
+                                        <p>Professional design services to enhance your AI-generated images</p>
+                                    </div>
+                                    <div class="services-grid">
+                                        <div class="service-card">
+                                            <i class="fas fa-palette"></i>
+                                            <h5>Custom Branding</h5>
+                                            <p>Logo design, brand identity, marketing materials</p>
+                                            <button class="btn-service" onclick="openServicePage('branding')">
+                                                Get Custom Design Help
+                                            </button>
+                                        </div>
+                                        <div class="service-card">
+                                            <i class="fas fa-code"></i>
+                                            <h5>Web Development</h5>
+                                            <p>Professional websites, web apps, e-commerce</p>
+                                            <button class="btn-service" onclick="openServicePage('web-dev')">
+                                                Build My Website
+                                            </button>
+                                        </div>
+                                        <div class="service-card">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <h5>App Development</h5>
+                                            <p>Mobile apps, software solutions, consulting</p>
+                                            <button class="btn-service" onclick="openServicePage('app-dev')">
+                                                Develop My App
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="promotion-cta">
+                                        <button class="btn-primary-large" onclick="showAllServices()">
+                                            <i class="fas fa-star"></i>
+                                            View All BubbleRoot Studios Services
+                                        </button>
+                                        <button class="btn-close-promo" onclick="hideServicesPromotion()">
+                                            <i class="fas fa-times"></i> Maybe Later
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="preview-container" id="image-preview">
                                 <div class="preview-placeholder">
@@ -499,6 +562,587 @@
                     <p>Start creating amazing images with our AI image generator!</p>
                     <button class="btn-primary" onclick="scrollToSection('image-studio')">
                         Create Your First Image
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BubbleRoot Studios Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="services-header">
+                    <h2><i class="fas fa-briefcase"></i> BubbleRoot Studios Services</h2>
+                    <p>Professional design and development services to bring your vision to life</p>
+                </div>
+
+                <!-- Featured Service Bundles -->
+                <div class="bundles-section">
+                    <h3><i class="fas fa-star"></i> Featured Service Bundles</h3>
+                    <div class="bundles-grid">
+                        <div class="bundle-card featured">
+                            <div class="bundle-badge">Most Popular</div>
+                            <div class="bundle-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Complete Web Presence</h4>
+                            <div class="bundle-price">
+                                <span class="price" data-zar="5999">R5,999</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <ul class="bundle-features">
+                                <li><i class="fas fa-check"></i> Professional Website Design</li>
+                                <li><i class="fas fa-check"></i> Custom AI-Generated Images</li>
+                                <li><i class="fas fa-check"></i> Logo & Brand Identity</li>
+                                <li><i class="fas fa-check"></i> SEO Optimization</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                                <li><i class="fas fa-check"></i> 6 Months Support</li>
+                            </ul>
+                            <button class="btn-bundle-primary" onclick="contactService('web-bundle')">
+                                <i class="fas fa-rocket"></i> Start Your Project
+                            </button>
+                        </div>
+
+                        <div class="bundle-card">
+                            <div class="bundle-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>Business Branding Package</h4>
+                            <div class="bundle-price">
+                                <span class="price" data-zar="3999">R3,999</span>
+                                <span class="period">/project</span>
+                            </div>
+                            <ul class="bundle-features">
+                                <li><i class="fas fa-check"></i> Logo Design (3 Concepts)</li>
+                                <li><i class="fas fa-check"></i> Brand Guidelines</li>
+                                <li><i class="fas fa-check"></i> Business Card Design</li>
+                                <li><i class="fas fa-check"></i> AI-Generated Marketing Materials</li>
+                                <li><i class="fas fa-check"></i> Social Media Templates</li>
+                            </ul>
+                            <button class="btn-bundle" onclick="contactService('branding-bundle')">
+                                <i class="fas fa-palette"></i> Get Your Brand
+                            </button>
+                        </div>
+
+                        <div class="bundle-card">
+                            <div class="bundle-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>App Development Suite</h4>
+                            <div class="bundle-price">
+                                <span class="price" data-zar="9999">R9,999</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <ul class="bundle-features">
+                                <li><i class="fas fa-check"></i> Mobile App Development</li>
+                                <li><i class="fas fa-check"></i> Cross-Platform Support</li>
+                                <li><i class="fas fa-check"></i> Backend Integration</li>
+                                <li><i class="fas fa-check"></i> UI/UX Design</li>
+                                <li><i class="fas fa-check"></i> App Store Deployment</li>
+                                <li><i class="fas fa-check"></i> 12 Months Support</li>
+                            </ul>
+                            <button class="btn-bundle" onclick="contactService('app-bundle')">
+                                <i class="fas fa-code"></i> Build My App
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Individual Services -->
+                <div class="individual-services">
+                    <h3><i class="fas fa-cogs"></i> Individual Services</h3>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Web Development</h4>
+                            <p>Custom websites, e-commerce platforms, and web applications</p>
+                            <div class="service-price">From R2,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('web-dev')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>Graphic Design</h4>
+                            <p>Logos, branding, marketing materials, and visual identity</p>
+                            <div class="service-price">From R1,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('graphic-design')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AI Solutions</h4>
+                            <p>Custom AI integrations, chatbots, and intelligent systems</p>
+                            <div class="service-price">From R5,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('ai-solutions')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Digital Marketing</h4>
+                            <p>SEO, social media, content creation, and online advertising</p>
+                            <div class="service-price">From R3,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('marketing')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Tech Consulting</h4>
+                            <p>Technology strategy, system architecture, and digital transformation</p>
+                            <div class="service-price">From R4,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('consulting')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4>Maintenance & Support</h4>
+                            <p>Ongoing website maintenance, updates, and technical support</p>
+                            <div class="service-price">From R1,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('support')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <h4>Voice Acting Services</h4>
+                            <p>Professional voiceovers for commercials, videos, and narrations</p>
+                            <div class="service-price">From R2,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('voice-acting')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4>Social Media Video Creation</h4>
+                            <p>Engaging social media videos and content management services</p>
+                            <div class="service-price">From R3,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('social-video')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <h4>Print Services</h4>
+                            <p>Business cards, flyers, banners, and professional print materials</p>
+                            <div class="service-price">From R1,599</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('print-services')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h4>Administrative Services</h4>
+                            <p>Scheduling, data entry, and tailored business operations support</p>
+                            <div class="service-price">From R2,599</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('admin-services')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Business Profiles & Plans</h4>
+                            <p>Comprehensive business profiles and detailed business planning</p>
+                            <div class="service-price">From R5,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('business-plans')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Funeral Program Design</h4>
+                            <p>Sensitive and respectful funeral program design services</p>
+                            <div class="service-price">From R1,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('funeral-programs')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h4>Vehicle Branding</h4>
+                            <p>Custom vehicle wraps and branding for maximum business visibility</p>
+                            <div class="service-price">From R7,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('vehicle-branding')">
+                                Learn More
+                            </button>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h4>3D Modeling & Animation</h4>
+                            <p>Professional 3D modeling and animation using Blender and advanced tools</p>
+                            <div class="service-price">From R4,999</div>
+                            <button class="btn-service-detail" onclick="showServiceDetails('3d-modeling')">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Showcase -->
+                <div class="portfolio-showcase">
+                    <h3><i class="fas fa-trophy"></i> Portfolio Showcase</h3>
+                    <p>See how Ndzalama AI and BubbleRoot Studios work together to create amazing results</p>
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-image">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwZDRmZjtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZjAwNmU7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZzEpIi8+PHRleHQgeD0iMjAwIiB5PSIxNTAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiPkUtY29tbWVyY2UgU2l0ZTwvdGV4dD48L3N2Zz4=" alt="E-commerce Website">
+                                <div class="showcase-overlay">
+                                    <button class="btn-view-case" onclick="viewCaseStudy('ecommerce')">
+                                        <i class="fas fa-eye"></i> View Case Study
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="showcase-info">
+                                <h4>E-commerce Platform</h4>
+                                <p>Complete online store with AI-generated product images and custom branding</p>
+                                <div class="showcase-tags">
+                                    <span class="tag">Web Development</span>
+                                    <span class="tag">AI Images</span>
+                                    <span class="tag">Branding</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="showcase-item">
+                            <div class="showcase-image">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmMDA2ZTtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmJkMDA7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZzIpIi8+PHRleHQgeD0iMjAwIiB5PSIxNTAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiPkJyYW5kIElkZW50aXR5PC90ZXh0Pjwvc3ZnPg==" alt="Brand Identity">
+                                <div class="showcase-overlay">
+                                    <button class="btn-view-case" onclick="viewCaseStudy('branding')">
+                                        <i class="fas fa-eye"></i> View Case Study
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="showcase-info">
+                                <h4>Restaurant Brand Identity</h4>
+                                <p>Complete branding package with AI-generated food photography and logo design</p>
+                                <div class="showcase-tags">
+                                    <span class="tag">Branding</span>
+                                    <span class="tag">AI Photography</span>
+                                    <span class="tag">Marketing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="showcase-item">
+                            <div class="showcase-image">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwZDRmZjtzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4YjVjZjY7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZzMpIi8+PHRleHQgeD0iMjAwIiB5PSIxNTAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiPk1vYmlsZSBBcHA8L3RleHQ+PC9zdmc+" alt="Mobile App">
+                                <div class="showcase-overlay">
+                                    <button class="btn-view-case" onclick="viewCaseStudy('mobile-app')">
+                                        <i class="fas fa-eye"></i> View Case Study
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="showcase-info">
+                                <h4>Fitness Mobile App</h4>
+                                <p>Cross-platform mobile app with AI-generated workout illustrations and custom UI</p>
+                                <div class="showcase-tags">
+                                    <span class="tag">App Development</span>
+                                    <span class="tag">AI Illustrations</span>
+                                    <span class="tag">UI/UX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-cta">
+                        <button class="btn-portfolio" onclick="viewFullPortfolio()">
+                            <i class="fas fa-folder-open"></i> View Full Portfolio
+                        </button>
+                        <button class="btn-start-project" onclick="startCustomProject()">
+                            <i class="fas fa-rocket"></i> Start Your Own Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Seasonal Promotion -->
+                <div class="seasonal-promotion" id="seasonal-promotion">
+                    <div class="promotion-content">
+                        <div class="promotion-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="promotion-text">
+                            <h3>🎉 Limited Time Offer!</h3>
+                            <p><strong>Summer Special:</strong> Get 30% off any service bundle when you mention Ndzalama AI!</p>
+                            <div class="promotion-countdown" id="promotion-countdown"></div>
+                        </div>
+                        <button class="btn-promotion" onclick="claimOffer()">
+                            <i class="fas fa-tag"></i> Claim Offer Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contact CTA -->
+                <div class="services-cta">
+                    <h3>Ready to bring your vision to life?</h3>
+                    <p>Let's discuss your project and see how we can help you succeed</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary-large" onclick="contactBubbleRoot()">
+                            <i class="fas fa-comments"></i> Get Free Consultation
+                        </button>
+                        <button class="btn-secondary-large" onclick="requestQuote()">
+                            <i class="fas fa-calculator"></i> Request Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paid Add-ons Section -->
+        <section id="premium-features" class="premium-section">
+            <div class="container">
+                <div class="premium-header">
+                    <h2><i class="fas fa-crown"></i> Premium Image Enhancement</h2>
+                    <p>Take your AI-generated images to the next level with professional enhancements</p>
+                </div>
+
+                <div class="premium-grid">
+                    <div class="premium-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h4>AI Super Resolution</h4>
+                        <p>Upscale your images to 4K resolution with AI-powered enhancement</p>
+                        <div class="feature-price" data-zar="100">R100 per image</div>
+                        <div class="feature-example">
+                            <span class="example-text">512x512 → 2048x2048</span>
+                        </div>
+                        <button class="btn-premium" onclick="purchaseFeature('upscaling')">
+                            <i class="fas fa-magic"></i> Enhance Now
+                        </button>
+                    </div>
+
+                    <div class="premium-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Professional Color Grading</h4>
+                        <p>Apply cinematic color grading and professional photo corrections</p>
+                        <div class="feature-price">R60 per image</div>
+                        <div class="feature-example">
+                            <span class="example-text">10+ Professional Presets</span>
+                        </div>
+                        <button class="btn-premium" onclick="purchaseFeature('color-grading')">
+                            <i class="fas fa-adjust"></i> Enhance Colors
+                        </button>
+                    </div>
+
+                    <div class="premium-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-crop-alt"></i>
+                        </div>
+                        <h4>Smart Background Removal</h4>
+                        <p>AI-powered background removal and replacement with studio-quality results</p>
+                        <div class="feature-price">R40 per image</div>
+                        <div class="feature-example">
+                            <span class="example-text">Professional Cutouts</span>
+                        </div>
+                        <button class="btn-premium" onclick="purchaseFeature('background-removal')">
+                            <i class="fas fa-cut"></i> Remove Background
+                        </button>
+                    </div>
+
+                    <div class="premium-feature popular">
+                        <div class="feature-badge">Most Popular</div>
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Complete Enhancement Suite</h4>
+                        <p>All premium features combined for maximum impact</p>
+                        <div class="feature-price">R160 per image <span class="original-price">R200</span></div>
+                        <div class="feature-example">
+                            <span class="example-text">Save 20% on bundle</span>
+                        </div>
+                        <button class="btn-premium-popular" onclick="purchaseFeature('complete-suite')">
+                            <i class="fas fa-crown"></i> Get Full Suite
+                        </button>
+                    </div>
+                </div>
+
+                <div class="premium-info">
+                    <h4><i class="fas fa-info-circle"></i> How It Works</h4>
+                    <div class="info-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p>Generate your image for free with Ndzalama AI</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p>Choose your preferred enhancement options</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p>Pay securely and receive enhanced images instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="testimonials-header">
+                    <h2><i class="fas fa-star"></i> Client Testimonials</h2>
+                    <p>What our amazing South African clients say about BubbleRoot Studios</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"BubbleRoot Studios transformed our restaurant's brand identity completely. The AI-generated food images from Ndzalama AI were incredible, and their branding package exceeded all expectations. Highly professional team!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Thabo Mthembu</h4>
+                                <span>Owner, Thabo's Traditional Kitchen</span>
+                                <span class="location">Johannesburg, SA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The voice acting services were outstanding! BubbleRoot Studios created professional voiceovers for our marketing campaign. The turnaround time was excellent and the quality was broadcast-ready."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Nomsa Khumalo</h4>
+                                <span>Marketing Director, Cape Innovations</span>
+                                <span class="location">Cape Town, SA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Our e-commerce website built by BubbleRoot Studios is absolutely phenomenal. The integration with Ndzalama AI for product images saved us thousands in photography costs. Customer sales increased by 150%!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sipho Mokoena</h4>
+                                <span>CEO, African Crafts Online</span>
+                                <span class="location">Durban, SA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The 3D modeling and animation work was exceptional. BubbleRoot Studios brought our architectural designs to life with stunning visualizations. Their attention to detail is remarkable."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Palesa Ndlovu</h4>
+                                <span>Architect, Ndlovu Design Studios</span>
+                                <span class="location">Pretoria, SA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The vehicle branding service transformed our delivery fleet. The design was eye-catching and professional. We've seen a significant increase in brand recognition around Bushbuckridge."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Mandla Chauke</h4>
+                                <span>Operations Manager, Lowveld Logistics</span>
+                                <span class="location">Bushbuckridge, SA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The social media video creation service helped us go viral! BubbleRoot Studios understood our brand perfectly and created content that resonated with our audience. Our follower count tripled!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Lerato Makwela</h4>
+                                <span>Founder, Youth Empowerment SA</span>
+                                <span class="location">Polokwane, SA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-cta">
+                    <h3>Ready to join our happy clients?</h3>
+                    <p>Experience the BubbleRoot Studios difference for yourself</p>
+                    <button class="btn-primary-large" onclick="contactBubbleRoot()">
+                        <i class="fas fa-handshake"></i> Start Your Success Story
                     </button>
                 </div>
             </div>
