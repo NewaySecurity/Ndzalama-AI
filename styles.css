@@ -2973,3 +2973,14 @@ select:focus-visible {
         right: -50px;
     }
 }
+
+/* Fix loading screen display */
+.loading-screen {
+    display: flex !important;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+}
+
+.loading-screen.hidden {
+    display: none !important;
+}

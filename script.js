@@ -6088,3 +6088,12 @@ window.purchaseFeature = function(featureType) {
         }
     }
 };
+// Quick fix for loading screen
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 2000);
+    }
+});
